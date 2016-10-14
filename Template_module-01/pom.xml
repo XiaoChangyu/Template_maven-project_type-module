@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>p.ka.template</groupId>
+		<artifactId>Template_maven-project_type-module</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>Template_module-01</artifactId>
+
+	<name>Template_module-01</name>
+	<url>http://maven.apache.org</url>
+
+<!-- 由于继承了 parent project 的打包和引用等信息, 所以这里可以不需要而直接使用 -->
+</project>

@@ -1,0 +1,36 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<!-- 这个 id 的名字会跟在使用 assembly 组装打包的文件名的末尾, 这里只是用一个 "-" -->
+	<id>-</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<fileSets>
+		<!-- 将 src/main/bin 路径下的启动脚本放入根目录 -->
+		<fileSet>
+			<directory>src/main/bin</directory>
+			<outputDirectory>/</outputDirectory>
+			<!-- 根据打包方式选择特定格式的启动脚本 -->
+			<includes>
+				<include>*.sh</include>
+			</includes>
+		</fileSet>
+		<!-- 将 src/main/resources 路径下的配置文件放入 config 目录 -->
+		<fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>conf</outputDirectory>
+        </fileSet>
+
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>lib</outputDirectory>
+			<!-- 将 scope 为 runtime 的依赖包打包到 lib 目录下 -->
+			<scope>runtime</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>
